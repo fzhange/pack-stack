@@ -70,3 +70,124 @@ Request object不仅代表了HTTP请求而且有request query string, parameters
 为了兼容多基础平台(eg. express and fastify),Nest提供了`@Res @Response()` 装饰符`@Res`是`@Response`的别名。这两个都可以直接暴露原生的response对象。当使用原生对象的时候，你应该同时导入其TS类型，以发挥类型优势。注意当你在一个方法中注入@Res或@Response时，此时该Handler就变成了Library-specific mode，所以需要你去管理你自己的response.
 
 ## Resources
+
+之前，我们已经定义了一个endpoint去获取resource(get route). 一般情况下我们也想提供一个创建新records的endpoint.对于这种需求，我们创建一个post的handler
+
+```js
+import { Controller, Get, Post } from '@nestjs/common';
+
+@Controller('cats')
+export class CatsController {
+  @Post()
+  create(): string {
+    return 'This action adds a new cat';
+  }
+
+  @Get()
+  findAll(): string {
+    return 'This action returns all cats';
+  }
+}
+```
+
+我们很容易就能做到这些事。Nest提供了很多注解。`@Get(), @Post(), @Put(), @Delete(), @Patch(), @Options(), and @Head()`另外@All注解定义了一个可以处理他们所有情况的能力。
+
+## Route wildcards (路由通配符)
+
+基于路由的模式也是支持的。例如*通配符将匹配如何字符
+
+```js
+@Get('ab*cd')
+findAll() {
+  return 'This route uses a wildcard';
+}
+```
+
+“ab*cd”路径路径将与abcd，ab_cd，abecd等匹配。字符`?, +, *,()`都能被使用。（The characters ?, +,*, and () may be used in a route path, and are subsets of their regular expression counterparts）。连字符 - 和点. 是通过基于字符串的路径来解释的。
+
+:::warning
+路由中间的通配符只被express支持
+:::
+
+## Status code
+
+默认情况下的状态码都是200。除了POST请求是201.我们可以使用`@HttpCode`来改变这个行为
+
+```js
+@Post()
+@HttpCode(204)
+create() {
+  return 'This action adds a new cat';
+}
+```
+
+:::tip
+Import HttpCode from the @nestjs/common package.
+:::
+
+一般来说status code是取决于各种因素的，不能是静态的。这种情况下你可以使用library-specific mode,注入response对象(inject using @Res()) ,或者万一异常了，抛出异常。
+
+## Headers
+
+指定一个自定的响应头。可以使用`@Header()` decorator或者`res.header()`
+
+```js
+@Post()
+@Header('Cache-Control', 'none')
+create() {
+  return 'This action adds a new cat';
+}
+```
+
+:::tip
+Import Header from the @nestjs/common package.
+:::
+
+## Redirection
+
+使用`@Redirect`做重定向或者`call res.redirect() directly`
+`@Redirect`有两个参数，一个是URL，另一个是statusCode。且都是可选的。默认的状态码是302.
+
+```js
+@Get()
+@Redirect('https://nestjs.com', 301)
+```
+
+:::tip
+有可能你想动态设置http code和redirect url。你只需返回一个遵守HttpRedirectResponse接口的对象即可。
+返回的值将会重写`@Redirect()`里的参数。
+
+```js
+
+@Get('docs')
+@Redirect('https://docs.nestjs.com', 302)
+getDocs(@Query('version') version) {
+  if (version && version === '5') {
+    return { url: 'https://docs.nestjs.com/v5/' };
+  }
+}
+
+```
+
+:::
+
+## Route parameters 路由参数
+
+如果你要接受客户端的参数(e.g., GET /cats/1 去获取id 1),我们可以使用如下方式
+在`@Get`装饰符中的id可以在params中访问。
+
+```js
+@Get(':id')
+findOne(@Param() params: any): string {
+  console.log(params.id);
+  return `This action returns a #${params.id} cat`;
+}
+```
+
+```js
+@Get(':id')
+findOne(@Param('id') id: string): string {
+  return `This action returns a #${id} cat`;
+}
+
+```
