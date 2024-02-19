@@ -191,3 +191,25 @@ findOne(@Param('id') id: string): string {
 }
 
 ```
+
+## Sub-Domain Routing
+
+`@Controller`可以设置一个host参数来要求客户端请求所携带的host和具体的值匹配。
+
+```js
+@Controller({ host: 'admin.example.com' })
+export class AdminController {
+  @Get()
+  index(): string {
+    return 'Admin page';
+  }
+}
+```
+
+:::warning
+Since Fastify lacks support for nested routers, when using sub-domain routing, the (default) Express adapter should be used instead.
+:::
+
+## Scopes
+
+对于来自不同编程语言背景的人而言,在Nest中可能有一些意外。Nest中所有的东西都是在incoming requests中被共享的。
