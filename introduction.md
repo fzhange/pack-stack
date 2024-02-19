@@ -44,7 +44,7 @@ npm install
 npm run start
 ```
 
-:::
+::: tip
 如果你不想要GIT history，可以使用 [degit](https://github.com/Rich-Harris/degit)
 :::
 
