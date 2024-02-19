@@ -1,5 +1,6 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
+# https://vitepress.dev/guide/markdown
 layout: home
 
 hero:

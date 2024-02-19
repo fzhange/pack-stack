@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import sidebar from "./sidebar/index"
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -12,26 +13,9 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       { text: 'Documentation', link: '/introduction' }
     ],
-
-    sidebar: [
-      { text: '简介', link: '/introduction' },
-      {
-        text:"概览",
-        items:[
-          { text: '第一步', link: '/overview/first-step' },
-        ]
-      },
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      }
-    ],
-
+    sidebar,
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/fzhange/nestJs-docs' }
     ]
   }
 })
