@@ -11,8 +11,8 @@ hero:
       text:  Get Start
       link: /introduction
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: source code
+      link: https://nestjs.com/
 
 features:
   - title: Feature A

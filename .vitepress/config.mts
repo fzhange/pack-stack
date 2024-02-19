@@ -3,9 +3,9 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "NestJs",
-  base:"nestJs-docs",
   description: "一个高效、可伸缩、可信赖的、渐进式NodeJs框架",
   ignoreDeadLinks: true,
+  base:"/nestJs-docs/",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
