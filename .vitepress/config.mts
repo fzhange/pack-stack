@@ -23,7 +23,6 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Documentation', link: '/introduction' },
       { text: 'nx-vue-spark', link: '/nx-vue-spark/index' },
       { text: 'nx-vue-cosmopolis', link: '/nx-vue-cosmopolis' }
     ],
