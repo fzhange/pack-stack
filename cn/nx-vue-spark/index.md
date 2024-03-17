@@ -13,7 +13,7 @@ NxVueSpark 是一个基于 NX 作为构建工具的 vue3 模板工程。她可�
 
 ## [为什么用 NX？](./docs/zh/why.md)
 
-![alt text](./docs/images/ts-benchmark.gif)
+![alt text](/images/ts-benchmark.gif)
 
 - 💪 **快**
 - 💪 **简单**
