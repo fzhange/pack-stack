@@ -24,7 +24,7 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'nx-vue-spark', link: '/nx-vue-spark/index' },
-      { text: 'nx-vue-cosmopolis', link: '/nx-vue-cosmopolis' }
+      { text: 'nx-vue-cosmopolis', link: '/nx-vue-cosmopolis/index' }
     ],
     sidebar,
     socialLinks: [
