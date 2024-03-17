@@ -3,11 +3,11 @@ layout: home
 
 hero:
   name: "pack-stack"
-  text: "The Ultimate NX/Turbo Template Resource"
+  text: "终极NX/Turbo模板资源"
   tagline: Develop an application promptly.
   actions:
     - theme: brand
-      text:  Get Start
+      text:  开始
       link: /introduction
     - theme: alt
       text: NX
@@ -24,4 +24,6 @@ features:
     details: a vue3 mono repo base on nx
     link: https://github.com/fzhange/nx-vue-cosmopolis
 ---
+
+12312
 

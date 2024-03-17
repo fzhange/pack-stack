@@ -8,11 +8,24 @@ export default defineConfig({
   ignoreDeadLinks: true,
   base:"/pack-stack/",
   appearance:"dark",
+  locales: {
+    root: {
+      label: 'English',
+      lang: 'en'
+    },
+    cn: {
+      label: '简体中文',
+      lang: 'cn', // optional, will be added  as `lang` attribute on `html` tag
+      link: '/cn' // default /fr/ -- shows on navbar translations menu, can be external
+    }
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Documentation', link: '/introduction' }
+      { text: 'Documentation', link: '/introduction' },
+      { text: 'nx-vue-spark', link: '/nx-vue-spark/index' },
+      { text: 'nx-vue-cosmopolis', link: '/nx-vue-cosmopolis' }
     ],
     sidebar,
     socialLinks: [

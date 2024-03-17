@@ -1,10 +1,5 @@
-import overview from "./overview"
-import fundamentals from "./fundamentals"
-import microservices from "./microservices"
+import nxVueSpark from "./nx-vue-spark"
 
-export default [
-  { text: '简介', link: '/introduction' },
-  overview,
-  fundamentals,
-  microservices
-]
+export default {
+  ...nxVueSpark,
+}
