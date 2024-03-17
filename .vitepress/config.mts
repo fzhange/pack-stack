@@ -3,10 +3,10 @@ import sidebar from "./sidebar/index"
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "NestJs",
-  description: "一个高效、可伸缩、可信赖的、渐进式NodeJs框架",
+  title: "pack-stack",
+  description: "The Ultimate NX/Turbo Template Resource",
   ignoreDeadLinks: true,
-  base:"/nestJs-docs/",
+  base:"/pack-stack/",
   appearance:"dark",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
@@ -16,7 +16,7 @@ export default defineConfig({
     ],
     sidebar,
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/fzhange/nestJs-docs' }
+      { icon: 'github', link: 'https://github.com/fzhange/pack-stack' }
     ]
   }
 })

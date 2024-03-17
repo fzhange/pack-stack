@@ -212,4 +212,9 @@ Since Fastify lacks support for nested routers, when using sub-domain routing, t
 
 ## Scopes
 
-对于来自不同编程语言背景的人而言,在Nest中可能有一些意外。Nest中所有的东西都是在incoming requests中被共享的。
+对于来自不同编程语言背景的人而言,在Nest中可能有一些意外。Nest中所有的东西都是在incoming requests中被共享的。我们有一个与数据库的连接池，具有全球状态的Singleton服务等。请记住，node.js不遵循请求/响应多线程无状态模型，其中每个请求都由单独的线程处理。因此，使用单例实例对我们的应用程序更加安全。
+<!-- TODO -->
+
+## Asynchronicity
+
+我们喜欢现代的JavaScript，我们知道数据提取大多是异步的。这就是为什么Nest支持异步函数。

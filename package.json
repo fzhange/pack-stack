@@ -1,10 +1,9 @@
 {
-  "name": "nestjs-docs",
+  "name": "pack-stack",
   "version": "1.0.0",
-  "description": "NestJs chinese document.",
+  "description": "The Ultimate NX/Turbo Template Resource",
   "main": "index.js",
   "scripts": {
-    "deploy": "bash deploy.sh",
     "test": "echo \"Error: no test specified\" && exit 1",
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
