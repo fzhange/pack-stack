@@ -12,8 +12,11 @@ hero:
       text:  Get Start
       link: /introduction
     - theme: alt
-      text: 官网
-      # link: https://nestjs.com/
+      text: NX
+      link: https://nx.dev/
+    - theme: alt
+      text: turbo
+      link: https://turbo.build/repo
 
 features:
   - title: nx-vue-spark
