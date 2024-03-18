@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text:  Get Start
-      link: /introduction
+      link: /templates
     - theme: alt
       text: NX
       link: https://nx.dev/
