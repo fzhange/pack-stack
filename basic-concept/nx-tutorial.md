@@ -19,7 +19,9 @@ npm add --global nx@latest
 >[!TIP]
 > you can use the nx-vue-cosmopolis or nx-vue-spark repo do test directly. They are all nx workspace.
 
-## what's nx?
+## what's the Nx?
+
+If you don't know Nx. You must have known Lerna before. Nrwl, the company behind Nx, are taking over the stewardship of Lerna.js. [Lerna is dead - Long Live Lerna](https://dev.to/nrwl/lerna-is-dead-long-live-lerna-3jal)
 
 Nx is a task runner. **It can cache your tasks and ensure those tasks are run in the correct order.**
 Support the local or remote cache of your task to make your task faster.
