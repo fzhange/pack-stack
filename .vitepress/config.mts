@@ -24,9 +24,7 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'concept', link: '/basic-concept/nx-tutorial' },
-      { text: 'templates', link: '/template-library/index' },
-      { text: 'nx-vue-spark', link: '/nx-vue-spark/index' },
-      { text: 'nx-vue-cosmopolis', link: '/nx-vue-cosmopolis/index' }
+      { text: 'templates', link: '/template-library/nx-vue-spark' },
     ],
     sidebar,
     socialLinks: [

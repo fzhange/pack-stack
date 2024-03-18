@@ -4,8 +4,8 @@ export default {
   '/template-library/':{
     text: 'nx',
     items: [
-      { text: 'nx-tutorial', link: '/template-library/nx-tutorial' },
-      { text: 'nx-vs-turbo', link: '/template-library/nx-vs-turbo' }
+      { text: 'nx-vue-spark', link: '/template-library/nx-vue-spark' },
+      { text: 'nx-vue-cosmopolis', link: '/template-library/nx-vue-cosmopolis' }
     ],
   },
 }
