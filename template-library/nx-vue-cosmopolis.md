@@ -33,7 +33,7 @@ Now Let's use it.
 nx g @nx/vue:library products --directory=modules/products --unit-test-runner=vitest --bundler=vite
 
 #2. create a component under products lib
-nx g @nx/vue:component product-list --directory=modules/products/src/cart
+nx g @nx/vue:component product-list --directory=modules/products/src/product-list
 ```
 
 Okay. Now we have created a products lib and a component.
