@@ -8,12 +8,15 @@
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview",
-    "upload":"bash ./upload.sh"
+    "upload": "bash ./upload.sh"
   },
   "keywords": [],
   "author": "jackZhang",
   "license": "ISC",
   "devDependencies": {
+    "@nx/workspace": "^18.1.2",
+    "nx": "18.1.2",
     "vitepress": "^1.0.0-rc.43"
-  }
+  },
+  "nx": {}
 }
