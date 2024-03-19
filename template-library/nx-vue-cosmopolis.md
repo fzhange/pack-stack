@@ -1,4 +1,12 @@
-# nx-vue-cosmopolis
+# [nx-vue-cosmopolis](https://github.com/fzhange/nx-vue-cosmopolis)
+
+The nx-vue-cosmopolis is a vue3 monorepo base on nx.
+
+## 🚀 Features
+
+- 💪 Local Linking of Packages
+- 💪 Local Linking of Packages
+
 
 ## use nx quickly
 
