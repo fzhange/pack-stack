@@ -20,6 +20,7 @@ export default defineConfig({
     }
   },
   themeConfig: {
+    i18nRouting:true,
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },

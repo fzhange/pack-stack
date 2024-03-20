@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text:  开始
-      link: /introduction
+      link: /cn/template-library/nx-vue-spark
     - theme: alt
       text: NX
       link: https://nx.dev/
@@ -25,5 +25,5 @@ features:
     link: https://github.com/fzhange/nx-vue-cosmopolis
 ---
 
-12312
+
 

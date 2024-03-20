@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text:  Get Start
-      link: /templates
+      link: /template-library/nx-vue-spark
     - theme: alt
       text: NX
       link: https://nx.dev/
