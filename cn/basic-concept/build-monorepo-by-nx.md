@@ -79,3 +79,8 @@ nx g @nx/vue:library products --directory=modules/products --unit-test-runner=vi
 >
 > 是不是超级快。
 > 如果你想知道Nx是什么。以及如何去 构建、开发、测试、lint、发布、CI加速、构建缓存、请参考 [nx-tutorial](https://fzhange.github.io/pack-stack/basic-concept/nx-tutorial.html)
+>
+
+## 🌸 Thanks
+
+希望这些能帮助到大家。如果对你有帮助的话，麻烦给个Star吧⭐️

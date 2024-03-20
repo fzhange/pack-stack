@@ -1,75 +1,72 @@
-# nx-tutorial
+# NX 教程
 
-there is some basic knowledge about nx that can help you quickly use it.
+这里是Nx的一些基础知识。帮助你快速掌握它，用起来。
 
-To do the test quickly you can install a NX global.
+先全局安装一下叭
 
 ```bash
 npm add --global nx@latest
 ```
 
 >[!TIP]
-> If you want to the nx command, you must work in the nx workspace
-> To create a workspace run:
+> 如果要使用Nx的命令，那么必须在Nx的工作空间里
+> 创建一个Nx的工作空间
 > `npx create-nx-workspace@latest <workspace name>`
 >
-> To add Nx to an existing workspace with a workspace-specific nx.json, run:
-> `npx nx@latest init`
+> 添加Nx到已存在的工作区 `npx nx@latest init`
 
 >[!TIP]
-> you can use the nx-vue-cosmopolis or nx-vue-spark repo do test directly. They are all nx workspace.
+> 你可以直接用我之前做的模板`nx-vue-cosmopolis`或者`nx-vue-spark`去做测试。
 
-## what's the Nx?
+## Nx是个啥？
 
-If you don't know Nx. You must have known Lerna before. Nrwl, the company behind Nx, are taking over the stewardship of Lerna.js. [Lerna is dead - Long Live Lerna](https://dev.to/nrwl/lerna-is-dead-long-live-lerna-3jal)
+你肯定知道Lerna吧。Nx的背后是Nrwl,Nrwl收购了Lerna。
+[Lerna is dead - Long Live Lerna](https://dev.to/nrwl/lerna-is-dead-long-live-lerna-3jal)
 
-Nx is a task runner. **It can cache your tasks and ensure those tasks are run in the correct order.**
-Support the local or remote cache of your task to make your task faster.
+Nx是一个任务运行器。 **可以缓存（支持本地缓存和云缓存）你运行任务的结果，同时确保这些任务以正确的顺序运行**
 
-🚀 There are some super cool core features of the NX.
+🚀 这里有些牛逼的特性
 
-- 🐥 Task pipeline (automatically organize the order of your tasks)
-- 🐥 Local linking of packages
-- 🐥 Cache tasks result (cache the result of your tasks. To make your task faster)
-- 🐥 Visualization relationship. (The NX provides a graph online to help you analyze the relationship of each task the from application and library)
-- 🐥 Rich plugin ecosystem.
-- 🐥 Manage Releases (Help you to release your library. Involves updating the version of your package, populating a changelog, and publishing the new version to the NPM registry)
-- 🐥 run and cache tasks in parallel from the NX cloud
+- 🐥 任务管道化 (以合理的顺序运行你所有library的任务)
+- 🐥 自动包的软链接（假设A libray依赖于B libray,此时B更新了内容，无需做任何事 A的内容也会更新哦）
+- 🐥 缓存你的Task结果 (支持本地缓存和云缓存，让你的应用快的起飞)
+- 🐥 可视化库依赖. (Nx会提供一个在线的可交互的图表，让你分析你的包，哪个依赖了哪个。再也不怕库太多分不清关系啦)
+- 🐥 丰富的插件系统(通过插件，我们可以支持everything).
+- 🐥 管理你的发布 (帮助你发包，自动帮你更新包版本，生成changelog)
+- 🐥 任务并行运行（说白了就是很快）
+- 🐥 Storybook 支持
 
-## some useful commands
+## 常用的命令
 
-you can run `nx` directly in an NX workspace. It will show all commands of nx.
-
-All command explanations are executed within [nx-vue-cosmopolis](https://github.com/fzhange/nx-vue-cosmopolis) repo.
+你可以直接在Nx的工作空间跑`nx`命令。下面的例子是在[nx-vue-cosmopolis](https://github.com/fzhange/nx-vue-cosmopolis) 仓库下运行
 
 > [!TIP]
-> `nx` command must be run under an Nx workspace.
+> `nx` 必须在Nx的工作空间下
 
 ### nx graph
 
-Graph dependencies within the workspace.
+以图表的形式展示工作空间下包之间的依赖关系。
 
-Run `nx graph` in your workspace. Then open the linking.
+直接运行 `nx graph`在你的项目里. 然后打开链接。
+
 [![9884fd7ab1276e49d4a1109cc0fd8ca9.png](https://s1.imagehub.cc/images/2024/03/19/9884fd7ab1276e49d4a1109cc0fd8ca9.png)](https://www.imagehub.cc/image/12a0E4)
 
 [![135f502ff292f547c922c18a12e7ca57.png](https://s1.imagehub.cc/images/2024/03/19/135f502ff292f547c922c18a12e7ca57.png)](https://www.imagehub.cc/image/12a6Sa)
 
 [![85f6ea9df66a1e866e246de248f81a64.png](https://s1.imagehub.cc/images/2024/03/19/85f6ea9df66a1e866e246de248f81a64.png)](https://www.imagehub.cc/image/12aNiA)
 
-You will see the dependence structure of the project.
+这里你就很清晰的看见了各个包之间的依赖关系。我们可以得到如下信息。
 
-1. We can know quickly `nx-vue-cosmopolis` depend on `order` and `products` module. And they two depend on `shared-ui` module.
-2. We know the type of `nx-vue-cosmopolis` is the `Application` and the type of the rest are `Library`.
-3. We know all the targets within theirs. (About the targets we will tell you later)
-4. we know the command that how to `lint build serve preview serve-static test`
+1. We can know quickly `nx-vue-cosmopolis` 依赖 `order` and `products` 库。而这两个库同时依赖 `shared-ui`.
+2. 我们可以知道`nx-vue-cosmopolis`的类型是 `Application` 而其他都是 `Library`.
+3.我们可以知道每个应用或者库内部的`target` (关于target后边会说到)
+4. 我们知道如何去 `lint build serve preview serve-static test`
 
 ### `nx generate <generator>`
 
-Runs a generator that creates and/or modifies files based on a generator from a collection.
+使用`generator`创建修改文件。此处我们以`@nx/vue`插件为例。
 
-I will show you the generate ability by `@nx/vue`.
-
-There are two ways that you can know the ability of the `@nx/vue`.
+这里有两种方式，你可以看到`@nx/vue`里面有哪些`generator`
 
 1. `nx list @nx/vue`
 
@@ -77,9 +74,16 @@ There are two ways that you can know the ability of the `@nx/vue`.
 
 2. [official website](https://nx.dev/nx-api/vue)
 
-According above picture, we know we can do many things with a plugin.
+从上面的图，我们知道`@nx/vue`这个插件可以做很多事。
 
-Now I will show you how to use it.
+- 💪 创建一个 vue 应用
+- 💪 创建一个Vue library
+- 💪 创建一个Vu 组件
+- 💪 设置 tailwind 配置
+- 💪 设置 storybook
+- 💪 为你的组件生成 stories
+
+下面我举个例子怎么用它。
 
 ```bash
 #1. create a lib named products
@@ -91,9 +95,9 @@ nx g @nx/vue:component product-list --directory=modules/products/src/product-lis
 
 ### nx release
 
-Orchestrate versioning and publishing of applications and libraries. And generate `CHANGELOG.md`
+协调应用程序和库的版本控制和发布。并生成`CHANGELOG.md`
 
-First, you'll need to define which projects Nx should manage releases for by setting the release. projects property in nx.json:
+首先，你需要通过设置release来定义Nx应该为哪些项目管理release。`nx.json`中的Projects属性:
 
 ```json
 {
@@ -103,10 +107,14 @@ First, you'll need to define which projects Nx should manage releases for by set
 }
 ```
 
-Then run
+然后运行
 
 ```bash
 nx release --first-release --dry-run
 ```
+
 [![f3dee63d78b91c9160fc7fc022aa3be8.png](https://s1.imagehub.cc/images/2024/03/19/f3dee63d78b91c9160fc7fc022aa3be8.png)](https://www.imagehub.cc/image/12uAtq)
 
+## 🌸 Thanks
+
+希望这些能帮助到大家。如果对你有帮助的话，麻烦给个Star吧⭐️
