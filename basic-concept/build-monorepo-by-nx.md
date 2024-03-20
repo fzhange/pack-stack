@@ -2,6 +2,11 @@
 
 We are based on the Vue framework to build a mono repo.
 
+>[!NOTE]
+> You can select any framework that you like. 
+> The Nx has much [plugin](https://nx.dev/nx-api) to support you to create a lib quickly.
+> eg: `@nx/js` `@nx/vue` `@nx/angular` `@nx/react`.
+
 
 1. create a nx workspace
 
@@ -53,3 +58,7 @@ nx g @nx/vue:library products --directory=modules/products --unit-test-runner=vi
 ```
 
 🤣 Now It's over. We have a vue3 mono repo now. Is it easy and quick?
+
+> TIP
+> 
+> About how to build develop test or lint, you can refer [nx-tutorial](./nx-tutorial.md) that i write before can help you quickly learn the Nx.
